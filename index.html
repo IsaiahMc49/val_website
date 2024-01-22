@@ -6,17 +6,43 @@
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>S.M. Website</title>
+        <title>S.M.</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="banner">
             <div class="content">
-                <h1>Will you be my valentine Shannon?</h1>
-                <h2>-your love, zaya<h2>
+                <h1>Would You Be My Valentine Shannon?</h1>
+                <h2>-your love, zaya &lt3<h2>
                 <div>
-                    <button type="button"><span></span>YES</button>
-                    <button type="button"><span></span>NO</button>
+                    <button type="button" id="yesButton" onclick="nextPage()">YES</button>
+                    <button type="button" id="noButton" onmouseover="moveButton()">NO</button>
+                    <script>
+                        function nextPage() {
+                            window.location.href = "yes.html";
+                        }
+
+                        function moveButton() {
+                            var button = document.getElementById('noButton');
+
+                            var maxX = window.innerWidth - button.offsetWidth;
+                            var maxY = window.innerHeight - button.offsetHeight;
+
+                            var x = Math.random() * maxX;
+                            var y = Math.random() * maxY;
+
+                            if (x > maxX) {
+                                x = maxX;
+                            }
+
+                            if (y > maxY) {
+                                y = maxY;
+                            }
+
+                            button.style.left = `${x}px`;
+                            button.style.top = `${y}px`;
+}
+                    </script>
                 </div>
             </div>
         </div>
