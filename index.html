@@ -1,5 +1,5 @@
 <html>
-    <audio controls autoplay>
+    <audio autoplay>
         <source src="Valentine_Laufey.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
       </audio>
@@ -16,32 +16,28 @@
                 <h2>-your love, zaya &lt3<h2>
                 <div>
                     <button type="button" id="yesButton" onclick="nextPage()">YES</button>
-                    <button type="button" id="noButton" onmouseover="moveButton()">NO</button>
+                    <button type="button" id="noButton">NO</button> 
                     <script>
+                        const buttonHeight = 50;
+                        const buttonWidth = 150;
+                        const maxWidth = window.innerWidth - buttonWidth;
+                        const maxHeight = window.innerHeight - buttonHeight;
+
+                        var button = document.getElementById('noButton');
+
+                        noButton.addEventListener('click', () => {
+                            button.style.left = Math.floor(Math.random() * (maxWidth + 1)) + 'px';
+                            button.style.top = Math.floor(Math.random() * (maxHeight + 1)) + 'px';
+                        }); 
+
+                        noButton.addEventListener('mouseover', () => {
+                            button.style.left = Math.floor(Math.random() * (maxWidth + 1)) + 'px';
+                            button.style.top = Math.floor(Math.random() * (maxHeight + 1)) + 'px';
+                        });
+                        
                         function nextPage() {
                             window.location.href = "yes.html";
                         }
-
-                        function moveButton() {
-                            var button = document.getElementById('noButton');
-
-                            var maxX = window.innerWidth - button.offsetWidth;
-                            var maxY = window.innerHeight - button.offsetHeight;
-
-                            var x = Math.random() * maxX;
-                            var y = Math.random() * maxY;
-
-                            if (x > maxX) {
-                                x = maxX;
-                            }
-
-                            if (y > maxY) {
-                                y = maxY;
-                            }
-
-                            button.style.left = `${x}px`;
-                            button.style.top = `${y}px`;
-}
                     </script>
                 </div>
             </div>
